@@ -15,7 +15,7 @@ file-types = [{ glob = "Makefile" }, { glob = "makefile" }, "make", "mk", "mak",
 shebangs = ["make", "gmake"]
 injection-regex = "(make|makefile|Makefile|mk)"
 comment-token = "#"
-indent = { tab-width = 4, unit = "    " }
+indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "markdown"
@@ -26,4 +26,22 @@ roots = [".marksman.toml"]
 language-servers = [ "marksman", "markdown-oxide" ]
 indent = { tab-width = 2, unit = "  " }
 block-comment-tokens = { start = "<!--", end = "-->" }
+
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rs|rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+shebangs = ["rust-script", "cargo"]
+auto-format = true
+comment-tokens = ["//", "///", "//!"]
+block-comment-tokens = [
+  { start = "/*", end = "*/" },
+  { start = "/**", end = "*/" },
+  { start = "/*!", end = "*/" },
+]
+language-servers = [ "rust-analyzer" ]
+indent = { tab-width = 4, unit = "    " }
+persistent-diagnostic-sources = ["rustc", "clippy"]
  

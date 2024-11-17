@@ -1,9 +1,16 @@
-
-theme = "kanagawa-dragon"
-
+theme = "monokai_pro_ristretto"
+# ferra is nice
+#flatwhite is nice too
+#hex_lavender is good
+#monokai_pro_ristretto
+#solarized_light
+#
 [editor]
 line-number = "absolute"
 mouse = false
+true-color = true
+color-modes = true
+
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,7 +19,11 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
 [keys.normal]
 Z = { Z = ":wq" }
 
