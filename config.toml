@@ -1,4 +1,4 @@
-theme = "monokai_pro_ristretto"
+theme = "kanagawa"
 # ferra is nice
 #flatwhite is nice too
 #hex_lavender is good
@@ -25,5 +25,8 @@ center = ["file-name"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 [keys.normal]
-Z = { Z = ":wq" }
-
+Z = {Q = ":q!", Z = ":wq" }
+V = ["select_mode", "extend_to_line_bounds"]
+x = "delete_selection"
+p = ["paste_clipboard_after", "collapse_selection"]
+esc = ["collapse_selection", "keep_primary_selection"]
